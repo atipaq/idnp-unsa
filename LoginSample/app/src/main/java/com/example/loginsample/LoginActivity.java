@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.loginsample.databinding.ActivityMainBinding;
@@ -18,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private ActivityResultLauncher<Intent> accountActivityLauncher;
-    private AccountEntity accountEntity; // Almacenar el usuario creado
+    private AccountEntity accountEntity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,9 @@ public class LoginActivity extends AppCompatActivity {
                             edtUsername.setText(accountEntity.getUsername());
                             edtPassword.setText(accountEntity.getPassword());
                         }
+                    } else if (result.getResultCode() == RESULT_CANCELED) {
+                        Toast.makeText(LoginActivity.this, "Registro cancelado", Toast.LENGTH_SHORT).show();
+                        Log.d("LogActivity", "Registro cancelado");
                     }
                 });
 

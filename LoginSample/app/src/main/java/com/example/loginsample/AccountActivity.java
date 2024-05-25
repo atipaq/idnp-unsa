@@ -23,6 +23,7 @@ public class AccountActivity extends AppCompatActivity {
         EditText edtUsername2 = findViewById(R.id.edtUsername2);
         EditText edtPassword2 = findViewById(R.id.edtPassword2);
         Button btnRegister = findViewById(R.id.btnRegister);
+        Button btnCancel = findViewById(R.id.btnCancel);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +53,14 @@ public class AccountActivity extends AppCompatActivity {
                 Intent resultIntent = new Intent();
                 resultIntent.putExtra("account", accountEntity);
                 setResult(RESULT_OK, resultIntent);
+                finish();
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(RESULT_CANCELED);
                 finish();
             }
         });
