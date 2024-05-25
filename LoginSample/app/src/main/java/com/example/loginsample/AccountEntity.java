@@ -1,7 +1,8 @@
 package com.example.loginsample;
+
 import java.io.Serializable;
 
-public class AccountEntity implements Serializable{
+public class AccountEntity implements Serializable {
     private String firstname;
     private String lastname;
     private String email;
@@ -9,6 +10,7 @@ public class AccountEntity implements Serializable{
     private String username;
     private String password;
 
+    // Getters y Setters
     public String getFirstname() {
         return firstname;
     }

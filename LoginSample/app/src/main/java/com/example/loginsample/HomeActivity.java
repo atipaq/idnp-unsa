@@ -12,11 +12,18 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Obtener el nombre de usuario enviado desde LoginActivity
-        String username = getIntent().getStringExtra("USERNAME");
+        AccountEntity accountEntity = (AccountEntity) getIntent().getSerializableExtra("account");
 
-        // Mostrar el nombre de usuario en el TextView de bienvenida
         TextView txtWelcomeMessage = findViewById(R.id.txtWelcomeMessage);
-        txtWelcomeMessage.setText("Bienvenido " + username);
+        if (accountEntity != null) {
+            String welcomeMessage = "Bienvenido " + accountEntity.getUsername() + "\n" +
+                    "Nombre: " + accountEntity.getFirstname() + "\n" +
+                    "Apellido: " + accountEntity.getLastname() + "\n" +
+                    "Email: " + accountEntity.getEmail() + "\n" +
+                    "Teléfono: " + accountEntity.getPhone();
+            txtWelcomeMessage.setText(welcomeMessage);
+        } else {
+            txtWelcomeMessage.setText("Bienvenido");
+        }
     }
 }
