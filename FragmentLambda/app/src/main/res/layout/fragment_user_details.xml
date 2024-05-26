@@ -3,27 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BlankFragment">
+    tools:context=".UserDetailsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="100dp"
+        android:gravity="center">
 
-        <EditText
-            android:id="@+id/edtMensaje"
+        <TextView
+            android:id="@+id/txtUserDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
-
-        <Button
-            android:id="@+id/btnEnviarMensaje"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="User Details"
+            android:textSize="18sp" />
     </LinearLayout>
 </FrameLayout>
