@@ -25,7 +25,7 @@ class CanvasView(context: Context, attrs: AttributeSet?) : View(context, attrs) 
         super.onSizeChanged(w, h, oldw, oldh)
         centerX = w / 2f
         centerY = h / 2f
-        scaleFactor = (w.coerceAtMost(h) / 600f)  // Adjust 600f based on the designed size
+        scaleFactor = (w.coerceAtMost(h) / 600f)
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -101,15 +101,21 @@ class CanvasView(context: Context, attrs: AttributeSet?) : View(context, attrs) 
         paint.color = Color.rgb(255, 165, 0)
         paint.style = Paint.Style.FILL
         canvas.drawOval(
-            centerX - 40 * scaleFactor, centerY + 100 * scaleFactor,
-            centerX, centerY + 250 * scaleFactor, paint
+            centerX - 50 * scaleFactor,
+            centerY + 70 * scaleFactor,
+            centerX - 10 * scaleFactor,
+            centerY + 210 * scaleFactor,
+            paint
         )
 
         paint.color = Color.BLACK
         paint.style = Paint.Style.STROKE
         canvas.drawOval(
-            centerX - 40 * scaleFactor, centerY + 100 * scaleFactor,
-            centerX, centerY + 250 * scaleFactor, paint
+            centerX - 50 * scaleFactor,
+            centerY + 70 * scaleFactor,
+            centerX - 10 * scaleFactor,
+            centerY + 210 * scaleFactor,
+            paint
         )
     }
 
@@ -117,15 +123,21 @@ class CanvasView(context: Context, attrs: AttributeSet?) : View(context, attrs) 
         paint.color = Color.rgb(255, 165, 0)
         paint.style = Paint.Style.FILL
         canvas.drawOval(
-            centerX, centerY + 100 * scaleFactor,
-            centerX + 40 * scaleFactor, centerY + 250 * scaleFactor, paint
+            centerX + 50 * scaleFactor,
+            centerY + 70 * scaleFactor,
+            centerX + 10 * scaleFactor,
+            centerY + 210 * scaleFactor,
+            paint
         )
 
         paint.color = Color.BLACK
         paint.style = Paint.Style.STROKE
         canvas.drawOval(
-            centerX, centerY + 100 * scaleFactor,
-            centerX + 40 * scaleFactor, centerY + 250 * scaleFactor, paint
+            centerX + 50 * scaleFactor,
+            centerY + 70 * scaleFactor,
+            centerX + 10 * scaleFactor,
+            centerY + 210 * scaleFactor,
+            paint
         )
     }
 
